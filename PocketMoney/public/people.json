@@ -1,0 +1,33 @@
+{
+  "query": "ask pocket money to send 100 dollars to clark",
+  "topScoringIntent": {
+    "intent": "Pocket Money",
+    "score": 0.9999995
+  },
+  "intents": [
+    {
+      "intent": "Pocket Money",
+      "score": 0.9999995
+    },
+    {
+      "intent": "None",
+      "score": 0.07603238
+    }
+  ],
+  "entities": [
+    {
+      "entity": "100",
+      "type": "Amount",
+      "startIndex": 25,
+      "endIndex": 27,
+      "score": 0.9708421
+    },
+    {
+      "entity": "clark",
+      "type": "Name",
+      "startIndex": 40,
+      "endIndex": 44,
+      "score": 0.9514567
+    }
+  ]
+}
