@@ -21,7 +21,7 @@ var inMemoryStorage = new builder.MemoryBotStorage();
 // This is a dinner reservation bot that uses a waterfall technique to prompt users for input.
 var bot = new builder.UniversalBot(connector, [
     function (session) {
-      //  session.send("Welcome to the chores app.");
+        session.send("Welcome to the chores app.");
         builder.Prompts.text(session, "What chore do you want to assign?");
     },
     function (session, results) {
