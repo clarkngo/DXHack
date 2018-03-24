@@ -1,0 +1,23 @@
+{
+  "name": "hellocortanajs",
+  "version": "1.0.0",
+  "description": "A hello world application for Cortana",
+  "main": "TryCortana.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ipeerbhai/DXHack.git"
+  },
+  "keywords": [
+    "cortana",
+    "testing"
+  ],
+  "author": "Imran Peerbhai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ipeerbhai/DXHack/issues"
+  },
+  "homepage": "https://github.com/ipeerbhai/DXHack#readme"
+}
