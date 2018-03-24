@@ -1,0 +1,31 @@
+{
+  "name": "hellocapitalonejs",
+  "version": "1.0.0",
+  "description": "This is a pure test of the Capital One Money Move API.  ",
+  "main": "TryMoneyMove.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ipeerbhai/DXHack.git"
+  },
+  "keywords": [
+    "CapitalOne",
+    "Move",
+    "Money"
+  ],
+  "author": "Imran Peerbhai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ipeerbhai/DXHack/issues"
+  },
+  "homepage": "https://github.com/ipeerbhai/DXHack#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "https": "^1.0.0",
+    "mocha": "^5.0.5",
+    "querystring": "^0.2.0",
+    "request": "^2.85.0"
+  }
+}
