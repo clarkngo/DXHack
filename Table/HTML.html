@@ -3,219 +3,288 @@
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
 
 <html>
-
 <head>
-    <style>
-        h2 {
-            font-family: Lobster, Monospace;
-            color: red
-        }
+<style>
+  h2 {
+     font-family: Lobster, Monospace;
+     color: red
+  }
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
 
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
+th, td {
+    text-align: left;
+    padding: 8px;
+}
 
-        th,
-        td {
-            text-align: left;
-            padding: 8px;
-        }
+tr:nth-child(even){background-color: #f2f2f2}
 
-        tr:nth-child(even) {
-            background-color: #f2f2f2
-        }
-
-        th {
-            background-color: #4CAF50;
-            color: white;
-        }
-
-        #myProgress {
-            width: 100%;
-            background-color: #ddd;
-        }
-
-        #myBar1 {
-            width: 10%;
-            height: 30px;
-            background-color: #4CAF50;
-            text-align: center;
-            line-height: 30px;
-            color: white;
-        }
-
-        #myBar2 {
-            width: 10%;
-            height: 30px;
-            background-color: #4CAF50;
-            text-align: center;
-            line-height: 30px;
-            color: white;
-        }
-
-        #myBar3 {
-            width: 10%;
-            height: 30px;
-            background-color: #4CAF50;
-            text-align: center;
-            line-height: 30px;
-            color: white;
-        }
-
-        #myBar4 {
-            width: 10%;
-            height: 30px;
-            background-color: #4CAF50;
-            text-align: center;
-            line-height: 30px;
-            color: white;
-        }
-    </style>
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+#myProgress {
+  width: 100%;
+  background-color: #ddd;
+}
+#myBar1 {
+  width: 10%;
+  height: 30px;
+  background-color: #4CAF50;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+#myBar2 {
+  width: 10%;
+  height: 30px;
+  background-color: #4CAF50;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+#myBar3 {
+  width: 10%;
+  height: 30px;
+  background-color: #4CAF50;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+#myBar4 {
+  width: 10%;
+  height: 30px;
+  background-color: #4CAF50;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+</style>
 </head>
-
 <body>
 
-    <h2>Chore List</h2>
+<h2>Chore List</h2>
 
-    <h3>My balance: </h3>
 
-    <table>
-        <tr>
-            <th>Tasks</th>
-            <th>Kid</th>
-            <th>Money</th>
-            <th>Done</th>
-            <th>Progress</th>
-            <th>Status</th>
-        </tr>
-        <tr>
-            <td>Wash the dishes</td>
-            <td>Nico</td>
-            <td>$1</td>
-            <td>
-                <input id="check" type="checkbox" onclick="move1()" />
-            </td>
-            <td>
-                <div id="myProgress">
-                    <div id="myBar1">0%</div>
-                </div>
-            </td>
-            <td>
-                <input id="txt" type="text" value="" />
-            </td>
-        </tr>
-        <tr>
-            <td>Mow the lawn</td>
-            <td>Stan</td>
-            <td>$1.5</td>
-            <td>
-                <input id="check" type="checkbox" onclick="move2()" />
-            </td>
-            <td>
-                <div id="myProgress">
-                    <div id="myBar2">0%</div>
-                </div>
-            </td>
-            <td>
-                <input id="txt" type="text" value="" />
-            </td>
-        </tr>
-        <tr>
-            <td>Clean the bathroom</td>
-            <td>Ann</td>
-            <td>$3</td>
-            <td>
-                <input id="check" type="checkbox" onclick="move3()" />
-            </td>
-            <td>
-                <div id="myProgress">
-                    <div id="myBar3">0%</div>
-                </div>
-                <td>
-                    <input id="txt" type="text" value="" />
-                </td>
-        </tr>
-        <tr>
-            <td>Eat vegetables</td>
-            <td>Mandy</td>
-            <td>$5</td>
-            <td>
-                <input id="check" type="checkbox" onclick="move4()" />
-            </td>
-            <td>
-                <div id="myProgress">
-                    <div id="myBar4">0%</div>
-                </div>
-            </td>
-            <td>
-                <input id="txt" type="text" value="" />
-            </td>
-        </tr>
-    </table>
+<h3>My balance: </h3>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
+<table>
+  <tr>
+    <th>Tasks</th>
+    <th>Person</th>
+    <th>Reward</th>
+    <th>Task Status(kid)</th>
+    <th>Transfer money(parent)</th>
+    <th>Payment Progress</th>
+  </tr>
+  <tr>
+    <td>Wash the dishes</td>
+    <td>Nico</td>
+    <td>$1.00</td>
+        <td>
+    <button type="button"
+onclick="document.getElementById('demo1').innerHTML = Date()">
+Done</button>
 
-    <script>
-        function move1() {
-            var elem = document.getElementById("myBar1");
-            var width = 10;
-            var id = setInterval(frame, 10);
-            function frame() {
-                if (width >= 100) {
-                    clearInterval(id);
-                } else {
-                    width++;
-                    elem.style.width = width + '%';
-                    elem.innerHTML = width * 1 + '%';
-                }
-            }
-        }
-        function move2() {
-            var elem = document.getElementById("myBar2");
-            var width = 10;
-            var id = setInterval(frame, 10);
-            function frame() {
-                if (width >= 100) {
-                    clearInterval(id);
-                } else {
-                    width++;
-                    elem.style.width = width + '%';
-                    elem.innerHTML = width * 1 + '%';
-                }
-            }
-        }
-        function move3() {
-            var elem = document.getElementById("myBar3");
-            var width = 10;
-            var id = setInterval(frame, 10);
-            function frame() {
-                if (width >= 100) {
-                    clearInterval(id);
-                } else {
-                    width++;
-                    elem.style.width = width + '%';
-                    elem.innerHTML = width * 1 + '%';
-                }
-            }
-        }
-        function move4() {
-            var elem = document.getElementById("myBar4");
-            var width = 10;
-            var id = setInterval(frame, 10);
-            function frame() {
-                if (width >= 100) {
-                    clearInterval(id);
-                } else {
-                    width++;
-                    elem.style.width = width + '%';
-                    elem.innerHTML = width * 1 + '%';
-                }
-            }
-        }
-    </script>
+<p id="demo1"></p></td>
+    <td><input id="check" type="checkbox" onclick="move1()"/></td>
+    <td>
+    <div id="myProgress">
+  <div id="myBar1" >0%</div>
+  
+</div>
+</td>
 
+  </tr>
+  <tr>
+    <td>Mow the lawn</td>
+    <td>Stan</td>
+    <td>$1.50</td>
+    <td>
+    <button type="button"
+onclick="document.getElementById('demo2').innerHTML = Date()">
+Done</button>
+
+<p id="demo2"></p></td>
+    <td><input id="check" type="checkbox" onclick="move2()"/></td>
+    <td>
+    <div id="myProgress">
+  <div id="myBar2" >0%</div>
+</div>
+</td>
+  </tr>
+  <tr>
+    <td>Clean the bathroom</td>
+    <td>Ann</td>
+    <td>$3.00</td>
+        <td>
+    <button type="button"
+  onclick="document.getElementById('demo3').innerHTML = Date()">
+Done</button>
+
+<p id="demo3"></p></td>
+    <td><input id="check" type="checkbox" onclick="move3()"/></td>
+    <td><div id="myProgress">
+  <div id="myBar3" >0%</div>
+</div>
+  </tr>
+  <tr>
+    <td>Eat vegetables</td>
+    <td>Mandy</td>
+    <td>$5.00</td>
+        <td>
+    <button type="button"
+onclick="document.getElementById('demo4').innerHTML = Date()">
+Done</button>
+<p id="demo4"></p></td>
+    <td><input id="check" type="checkbox" onclick="move4()"/></td>
+    <td>
+    <div id="myProgress">
+  <div id="myBar4" >0%</div>
+</div>
+</td>
+</tr>
+</table>
 </body>
-
 </html>
+
+
+<script>
+function move1() {
+    var elem = document.getElementById("myBar1"); 
+    var width = 10;
+    var id = setInterval(frame, 10);
+    function frame() {
+        if (width >= 100) {
+            clearInterval(id);
+        } else {
+            width++; 
+            elem.style.width = width + '%'; 
+            elem.innerHTML = width * 1 + '%';
+        }
+    }
+}
+function move2() {
+    var elem = document.getElementById("myBar2"); 
+    var width = 10;
+    var id = setInterval(frame, 10);
+    function frame() {
+        if (width >= 100) {
+            clearInterval(id);
+        } else {
+            width++; 
+            elem.style.width = width + '%'; 
+            elem.innerHTML = width * 1 + '%';
+        }
+    }
+}
+function move3() {
+    var elem = document.getElementById("myBar3"); 
+    var width = 10;
+    var id = setInterval(frame, 10);
+    function frame() {
+        if (width >= 100) {
+            clearInterval(id);
+        } else {
+            width++; 
+            elem.style.width = width + '%'; 
+            elem.innerHTML = width * 1 + '%';
+        }
+    }
+}
+function move4() {
+    var elem = document.getElementById("myBar4"); 
+    var width = 10;
+    var id = setInterval(frame, 10);
+    function frame() {
+        if (width >= 100) {
+            clearInterval(id);
+        } else {
+            width++; 
+            elem.style.width = width + '%'; 
+            elem.innerHTML = width * 1 + '%';
+        }
+    }
+}
+</script>
+
+<style>
+/* Chat containers */
+.container {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+/* Darker chat container */
+.darker {
+    border-color: #ccc;
+    background-color: #ddd;
+}
+
+/* Clear floats */
+.container::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Style images */
+.container img {
+    float: left;
+    max-width: 60px;
+    width: 100%;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+/* Style the right image */
+.container img.right {
+    float: right;
+    margin-left: 20px;
+    margin-right:0;
+}
+
+/* Style time text */
+.time-right {
+    float: right;
+    color: #aaa;
+}
+
+/* Style time text */
+.time-left {
+    float: left;
+    color: #999;
+}
+</style>
+
+
+<div class="container">
+  <img src="/w3images/bandmember.jpg" alt="Avatar">
+  <p>Cortana! I'm done with the dishes!</p>
+  <span class="time-right">11:00</span>
+</div>
+
+<div class="container darker">
+  <img src="/w3images/avatar_g2.jpg" alt="Avatar" class="right">
+  <p>How are about homework?</p>
+  <span class="time-left">11:01</span>
+</div>
+
+<div class="container">
+  <img src="/w3images/bandmember.jpg" alt="Avatar">
+  <p>Geez Luis!</p>
+  <span class="time-right">11:02</span>
+</div>
+
+<div class="container darker">
+  <img src="/w3images/avatar_g2.jpg" alt="Avatar" class="right">
+  <p>LUIS is a machine learning language...</p>
+  <span class="time-left">11:05</span>
+</div>
+
+
