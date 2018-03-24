@@ -324,13 +324,12 @@
         var people = [];
 
         $.getJSON('people.json', function (data) {
-            $.each(data.entities, function (i, f) {
-                var tblRow = "<tr>" + "<td>" + f.entity + "</td>" + "<td>" + f.entity + "</td>" + "</tr>"
-                $(tblRow).appendTo("#userdata tbody");
-            });
-
+            debugger;
+            var amount = data.entities[0].entity;
+            var person = data.entities[1].entity;
+            var tblRow = "<tr>" + "<td>" + person + "</td>" + "<td>" + amount + "</td>" + "</tr>";
+            $(tblRow).appendTo("#userdata tbody");
         });
-
 
     });
 </script>
