@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+
+<html>
+<head>
+<style>
+  h2 {
+     font-family: Lobster, Monospace;
+     color: red
+  }
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+</style>
+</head>
+<body>
+
+<h2>Chore List</h2>
+
+<table>
+  <tr>
+    <th>Tasks</th>
+    <th>Kid</th>
+    <th>Money</th>
+    <th>Done?</th>
+  </tr>
+  <tr>
+    <td>Peter</td>
+    <td>Griffin</td>
+    <td>$100</td>
+    <td><input type="checkbox"></td>
+  </tr>
+  <tr>
+    <td>Lois</td>
+    <td>Griffin</td>
+    <td>$150</td>
+    <td><input type="checkbox"></td>
+  </tr>
+  <tr>
+    <td>Joe</td>
+    <td>Swanson</td>
+    <td>$300</td>
+    <td><input type="checkbox"></td>
+  </tr>
+  <tr>
+    <td>Cleveland</td>
+    <td>Brown</td>
+    <td>$250</td>
+    <td><input type="checkbox"></td>
+</tr>
+</table>
+
+</body>
+</html>
