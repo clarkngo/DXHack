@@ -1,0 +1,30 @@
+{
+  "name": "pocketmoney",
+  "version": "1.0.0",
+  "description": "The actual web app put together from the html and exdperimental code.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ipeerbhai/DXHack.git"
+  },
+  "keywords": [
+    "pocket",
+    "money",
+    "hackathon",
+    "move",
+    "money"
+  ],
+  "author": "All",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ipeerbhai/DXHack/issues"
+  },
+  "homepage": "https://github.com/ipeerbhai/DXHack#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "request": "^2.85.0"
+  }
+}

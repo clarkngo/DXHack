@@ -102,7 +102,7 @@
                 </div>
             </td>
             <td>
-                <input id="txt" type="text" value="" />
+                <input id="txtDishes" type="text" value="" />
             </td>
         </tr>
         <tr>
@@ -154,19 +154,17 @@
         </tr>
     </table>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script>
-        function MoveMoney(amountDiv, outputBar) {
-            debugger;
+        function MoveMoney(amountDiv, outputBar, textElement) {
             let _amt = $(amountDiv).text();
             var posting = $.post("/v1/MoveMoney/", {
                 amount: _amt,
                 person: "john"
             });
-            posting.done((data) => {
+            posting.done(function(data) {
                 var elem = document.getElementById(outputBar);
+                let resultTextElement = $(textElement).val(data.toString());
                 var width = 10;
                 var id = setInterval(frame, 10);
                 function frame() {
@@ -182,7 +180,7 @@
         }
 
         function move1() {
-            MoveMoney("#payment1", "myBar1");
+            MoveMoney("#payment1", "myBar1", "#txtDishes");
         }
 
         function move2() {
