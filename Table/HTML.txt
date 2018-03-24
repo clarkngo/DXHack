@@ -72,10 +72,10 @@ th {
 <table>
   <tr>
     <th>Tasks</th>
-    <th>Kid</th>
-    <th>Money</th>
+    <th>Person</th>
+    <th>Reward</th>
     <th>Done</th>
-    <th>Progress</th>
+    <th>Payment Progress</th>
     <th>Status</th>
   </tr>
   <tr>
