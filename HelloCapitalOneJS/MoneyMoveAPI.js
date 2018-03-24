@@ -13,7 +13,7 @@ ACCOUNTS = "/accounts";
 module.exports = {
 
     //Retrieves the OAuth Token using the clientId and ClientSecret
-    getToken: function(callback) {
+    getToken: function (callback) {
         if (oauthToken) {
             callback(null, oauthToken);
         } else {
@@ -26,7 +26,7 @@ module.exports = {
                     'client_secret': clientSecret,
                     'grant_type': 'client_credentials'
                 }
-            }, function(err, res) {
+            }, function (err, res) {
                 if (err) {
                     console.log(err);
                 } else {
@@ -39,7 +39,7 @@ module.exports = {
     },
 
     //Builds the URL for requesting all transfers with provided filters
-    buildUrl: function(moneyMovementAccountReferenceId, filters, callback) {
+    buildUrl: function (moneyMovementAccountReferenceId, filters, callback) {
         var esc = encodeURIComponent;
         let url = MONEY_MOVEMENT + TRANSFER_REQUESTS;
         url += '?moneyMovementAccountReferenceId=' + esc(moneyMovementAccountReferenceId) + '&';
@@ -50,7 +50,7 @@ module.exports = {
     },
 
     //sends the HTTP request for MoneyMovement API
-    sendRequest: function(method, requestUrl, body, callback) {
+    sendRequest: function (method, requestUrl, body, callback) {
         let token = module.exports.getToken((oauthErr, oauthToken) => {
             if (oauthErr) {
                 console.log("Error retrieving token");
@@ -66,7 +66,7 @@ module.exports = {
                     body: body
                 };
                 reqOptions.headers["Authorization"] = `Bearer ${oauthToken}`;
-                request(reqOptions, function(err, response, body) {
+                request(reqOptions, function (err, response, body) {
                     if (err) {
                         console.log(`Error for Money Movement API ${requestUrl} failed with an error\n\n`, err);
                         callback(JSON.parse(err));
@@ -86,47 +86,47 @@ module.exports = {
     },
 
     //GET /money-movement/accounts: Retrieves all accounts and information
-    getAccounts: function(callback) {
+    getAccounts: function (callback) {
         let requestUrl = MONEY_MOVEMENT + ACCOUNTS;
-        module.exports.sendRequest('GET', requestUrl, "", function(response) {
+        module.exports.sendRequest('GET', requestUrl, "", function (response) {
             callback(response);
         });
     },
 
     //POST /money-monevement/transfer-requests: Request money to be moved from one account to another
-    initiateTransfer: function(transferRequest, callback) {
+    initiateTransfer: function (transferRequest, callback) {
         let requestUrl = MONEY_MOVEMENT + TRANSFER_REQUESTS;
         let body = JSON.stringify(transferRequest);
-        module.exports.sendRequest('POST', requestUrl, body, function(response) {
+        module.exports.sendRequest('POST', requestUrl, body, function (response) {
             callback(response);
         });
     },
 
     //GET /money-movement/transfer-requests/{transferRequestId}: View status/details of existing money transfer request
-    getTransferRequest: function(moneyMovementAccountReferenceId, callback) {
+    getTransferRequest: function (moneyMovementAccountReferenceId, callback) {
         let requestUrl = MONEY_MOVEMENT + TRANSFER_REQUESTS + "/" + moneyMovementAccountReferenceId;
-        module.exports.sendRequest('GET', requestUrl, "", function(response) {
+        module.exports.sendRequest('GET', requestUrl, "", function (response) {
             callback(response);
         });
     },
 
     //GET /money-movement/transfer-requests: View status/details of existing money transfer requests for an account with filters
-    getTransferRequests: function(moneyMovementAccountReferenceId, filters, callback) {
-        module.exports.buildUrl(moneyMovementAccountReferenceId, filters, function(requestUrl) {
-            module.exports.sendRequest('GET', requestUrl, "", function(response) {
+    getTransferRequests: function (moneyMovementAccountReferenceId, filters, callback) {
+        module.exports.buildUrl(moneyMovementAccountReferenceId, filters, function (requestUrl) {
+            module.exports.sendRequest('GET', requestUrl, "", function (response) {
                 callback(response);
             });
         });
     },
 
     //PATCH /money-movement/transfer-requests/{transferRequestId}: Update an existing money transfer request.
-    updateTransferRequest: function(transferRequestId, status, callback) {
+    updateTransferRequest: function (transferRequestId, status, callback) {
         let requestUrl = MONEY_MOVEMENT + TRANSFER_REQUESTS + "/" + transferRequestId;
         let transferRequest = {
             "transferRequestStatus": "Cancelled"
         };
         let body = JSON.stringify(transferRequest);
-        module.exports.sendRequest('PATCH', requestUrl, body, function(response) {
+        module.exports.sendRequest('PATCH', requestUrl, body, function (response) {
             callback(response);
         });
     }
